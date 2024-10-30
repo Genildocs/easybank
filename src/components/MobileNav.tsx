@@ -10,18 +10,20 @@ export default function MobileNav() {
       <div>
         <img src={Logo} alt="logo" />
       </div>
-      <button>
+      <button onClick={() => setIsOpen(!isOpen)}>
         <Bars3Icon className="h-6 w-6" />
       </button>
-      {isOpen && (
-        <motion.ul className="bg-white gap-5  absolute top-[150%] left-5 right-5 py-5 rounded-md   flex flex-col items-center opacity-0 invisible ">
-          {links.map((link) => (
-            <li key={link}>
-              <a href="#">{link}</a>
-            </li>
-          ))}
-        </motion.ul>
-      )}
+
+      <motion.ul
+        className={`bg-white gap-5 transition-all  absolute top-[150%] left-5 right-5 py-5 rounded-md   flex flex-col items-center ${
+          isOpen ? ' opacity-0 invisible' : ' opacity-100 visible '
+        } `}>
+        {links.map((link) => (
+          <li key={link}>
+            <a href="#">{link}</a>
+          </li>
+        ))}
+      </motion.ul>
     </>
   );
 }
