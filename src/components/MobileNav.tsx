@@ -15,7 +15,7 @@ export default function MobileNav() {
       </button>
 
       <motion.ul
-        className={`bg-white gap-5 transition-all  absolute top-[150%] left-5 right-5 py-5 rounded-md   flex flex-col items-center ${
+        className={`bg-white  gap-5 transition-all duration-500  absolute top-[150%] left-5 right-5 py-5 rounded-md   flex flex-col items-center ${
           isOpen ? ' opacity-0 invisible' : ' opacity-100 visible '
         } `}>
         {links.map((link) => (

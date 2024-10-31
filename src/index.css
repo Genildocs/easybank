@@ -6,6 +6,20 @@
 
 @layer base {
   body {
-    @apply font-public-sans min-h-screen bg-slate-400;
+    @apply font-public-sans min-h-screen bg-light-grayish-blue;
+  }
+
+  .btn-linear {
+    background: linear-gradient(
+      to right,
+      hsl(136, 65%, 51%),
+      hsl(192, 70%, 51%)
+    );
+  }
+}
+
+@layer components {
+  .bg-section-one {
+    background-size: 100% 50%;
   }
 }

@@ -1,14 +1,16 @@
-import React from 'react';
 import DesktopNav from './DesktopNav';
 import MobileNav from './MobileNav';
 
-export default function Nav() {
-  const links: string[] = ['Home', 'About', 'Contact', 'Blog', 'Careers'];
+interface ChildProps {
+  isSmallDevice: boolean;
+  isMediumDevice?: boolean;
+}
 
+export default function Nav({ isSmallDevice, isMediumDevice }: ChildProps) {
   return (
-    <div className="bg-white shadow-sm flex justify-between items-center  p-5 relative">
-      <MobileNav />
-      {/* <DesktopNav /> */}
+    <div className="bg-white shadow-sm flex justify-between items-center z-50  p-5 relative sm:px-20">
+      {isSmallDevice && <MobileNav />}
+      {isMediumDevice && <DesktopNav />}
     </div>
   );
 }
